@@ -1,5 +1,8 @@
-export default function Scoreboard() {
+export default function Scoreboard({ currentScore, highestScore }) {
   return (
-    <div>Scoreboard</div>
-  )
+    <section>
+      <p>Highest score: {highestScore}</p>
+      <p>Current score: {currentScore}</p>
+    </section>
+  );
 }

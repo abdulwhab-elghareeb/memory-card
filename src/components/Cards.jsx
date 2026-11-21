@@ -3,17 +3,19 @@ import Card from "./Card";
 import { shuffle } from "../utils/shuffleArray";
 
 export default function Cards(props) {
-  const [pokemonNames, setPokemonNames] = useState([
-    "Pikachu",
-    "Charizard",
-    "Eevee",
-    "Bulbasaur",
-    "Squirtle",
-    "Meowth",
-    "Gengar",
-    "Mewtwo",
-    "Blaziken",
-  ]);
+  const [pokemonNames, setPokemonNames] = useState(
+    shuffle([
+      "Pikachu",
+      "Charizard",
+      "Eevee",
+      "Bulbasaur",
+      "Squirtle",
+      "Meowth",
+      "Gengar",
+      "Mewtwo",
+      "Blaziken",
+    ]),
+  );
 
   function shuffleNames() {
     setPokemonNames(shuffle(pokemonNames));

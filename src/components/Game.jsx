@@ -7,14 +7,19 @@ export default function Game({ resetGame }) {
   const [highestScore, setHighestScore] = useState(0);
 
   return (
-    <main>
-      <h1>Pokémon Memory Game</h1>
-      <Scoreboard currentScore={currentScore} highestScore={highestScore} />
-      <Cards
-        setCurrentScore={setCurrentScore}
-        setHighestScore={setHighestScore}
-        resetGame={resetGame}
-      />
-    </main>
+    <>
+      <header>
+        <h1>Pokémon Memory Game</h1>
+      </header>
+      
+      <main>
+        <Scoreboard currentScore={currentScore} highestScore={highestScore} />
+        <Cards
+          setCurrentScore={setCurrentScore}
+          setHighestScore={setHighestScore}
+          resetGame={resetGame}
+        />
+      </main>
+    </>
   );
 }

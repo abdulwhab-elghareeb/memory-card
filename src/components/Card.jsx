@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 
 export default function Card({
+  currentScore,
+  highestScore,
   setCurrentScore,
   setHighestScore,
   resetGame,
   pokemonName,
   shuffleNames,
 }) {
+  const [isClicked, setIsClicked] = useState(false);
   const [imgUrl, setImgUrl] = useState(null);
+
   useEffect(() => {
     async function fetchPokemonImg() {
       const url = `https://pokeapi.co/api/v2/pokemon-form/${pokemonName}/`;
@@ -24,8 +28,19 @@ export default function Card({
     fetchPokemonImg();
   }, [pokemonName]);
 
+  function handleClick() {
+    if (isClicked) {
+      currentScore > highestScore ? setHighestScore(currentScore) : null;
+      resetGame();
+    } else {
+      setIsClicked(true);
+      setCurrentScore(currentScore + 1);
+      shuffleNames();
+    }
+  }
+
   return (
-    <button>
+    <button onClick={handleClick}>
       <img src={imgUrl} />
       {pokemonName}
     </button>

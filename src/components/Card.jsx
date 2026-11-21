@@ -1,4 +1,4 @@
-import ".styles/Card.css"
+import "../styles/Card.css"
 import { useEffect, useState } from "react";
 
 export default function Card({

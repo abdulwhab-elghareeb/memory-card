@@ -1,4 +1,4 @@
-import "../styles/Cards.css"
+import "../styles/Cards.css";
 import { useState } from "react";
 import Card from "./Card";
 import { shuffle } from "../utils/shuffleArray";
@@ -15,6 +15,7 @@ export default function Cards(props) {
       "Gengar",
       "Mewtwo",
       "Blaziken",
+      "Lucario",
     ]),
   );
 

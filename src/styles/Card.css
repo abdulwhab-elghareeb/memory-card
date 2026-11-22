@@ -3,12 +3,12 @@ span:has(button) {
 }
 
 span:hover button {
-  transform: translateY(-10px);
+  transform: translateY(-0.7rem);
 }
 
 button {
   width: 100%;
-  padding: 10px;
+  padding: 0.7rem;
 
   background-color: var(--primary-color);
   will-change: transform;

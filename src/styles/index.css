@@ -78,12 +78,12 @@ h6 {
 }
 
 body {
+  background-color: hsl(0 0 35);
   font-family: "Pixelify Sans";
-  font-size: clamp(2.4rem, 1vw + 1rem, 4rem);
-
+  font-size: clamp(2.3rem, 1vw + 0.75rem, 3.5rem);
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1400px;
   margin-inline: auto;
 }

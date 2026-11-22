@@ -1,6 +1,6 @@
 span:has(button) {
   display: inline-block;
-  font-size: 2rem;
+  font-size: clamp(2.4rem, 1vw + 1rem, 4rem);
 }
 
 span:hover button {
@@ -8,12 +8,10 @@ span:hover button {
 }
 
 button {
+  width: 100%;
+  padding: 10px;
+
   background-color: var(--primary-color);
-
-  display: flex;
-  flex-direction: column;
-  padding: 12px;
-
   will-change: transform;
   transition: transform 40ms;
 }

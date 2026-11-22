@@ -1,3 +1,4 @@
+import "../styles/Cards.css"
 import { useState } from "react";
 import Card from "./Card";
 import { shuffle } from "../utils/shuffleArray";
@@ -22,7 +23,7 @@ export default function Cards(props) {
   }
 
   return (
-    <section>
+    <section className="cards">
       {pokemonNames.map((pokemonName) => {
         return (
           <Card

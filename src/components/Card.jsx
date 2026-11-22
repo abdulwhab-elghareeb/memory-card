@@ -1,6 +1,5 @@
 import "../styles/Card.css";
 import { useState } from "react";
-import Loading from "./Loading";
 
 export default function Card({
   handleValidClick,
@@ -23,11 +22,7 @@ export default function Card({
   return (
     <span>
       <button className="pixel-corners" onClick={handleClick}>
-        {pokemonUrl ? (
-          <img src={pokemonUrl} height={200} width={200} alt="" />
-        ) : (
-          <Loading />
-        )}
+        <img src={pokemonUrl} height={200} width={200} alt="" />
         {pokemonName}
       </button>
     </span>

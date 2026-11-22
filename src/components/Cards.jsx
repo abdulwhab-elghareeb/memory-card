@@ -1,22 +1,27 @@
 import "../styles/Cards.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import pokemonNames from "../data/pokemonNames";
 import shuffle from "../utils/shuffleArray";
 import mapNamesToUrls from "../utils/mapNamesToUrls";
 import Loading from "./Loading";
 
-/* 
-I don't see any benefit from using "useEffect" here.
-Since there will only be 1 instance of this component, 
-and I only need to fetch data once because the data will 
-never change, it makes sense to fetch it at the top of the module 
-and use it whenever a new instance of this component gets created
-*/
-const pokemonMap = await mapNamesToUrls(pokemonNames);
+/* Saving it at the top of the module so each new instance starts with it as its default value */
+let pokemonMap;
 
 export default function Cards({ incrementScore, handleGameEnd }) {
   const [pokemonData, setPokemonData] = useState(shuffle(pokemonMap));
+
+  useEffect(() => {
+    if (!pokemonMap) {
+      async function fetchPokemonData() {
+        const data = await mapNamesToUrls(pokemonNames);
+        pokemonMap = data;
+        setPokemonData(shuffle(data));
+      }
+      fetchPokemonData();
+    }
+  }, []);
 
   function handleValidClick() {
     incrementScore();

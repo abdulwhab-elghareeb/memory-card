@@ -7,7 +7,7 @@ export default function Game({ resetGame, highestScore, setHighestScore }) {
   const [currentScore, setCurrentScore] = useState(0);
 
   return (
-    <>
+    <div className="wrapper">
       <header>
         <h1>
           <span>Pokémon</span> Memory Game
@@ -24,6 +24,6 @@ export default function Game({ resetGame, highestScore, setHighestScore }) {
           resetGame={resetGame}
         />
       </main>
-    </>
+    </div>
   );
 }

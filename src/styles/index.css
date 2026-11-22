@@ -79,4 +79,11 @@ h6 {
 
 body {
   font-family: "Pixelify Sans";
+  font-size: clamp(2.4rem, 1vw + 1rem, 4rem);
+
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin-inline: auto;
 }

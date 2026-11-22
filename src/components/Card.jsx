@@ -24,7 +24,7 @@ export default function Card({
     <span>
       <button className="pixel-corners" onClick={handleClick}>
         {pokemonUrl ? (
-          <img src={pokemonUrl} height={200} width={200} />
+          <img src={pokemonUrl} height={200} width={200} alt="" />
         ) : (
           <Loading />
         )}

@@ -78,6 +78,10 @@ h6 {
   --secondary-color: hsl(1, 83%, 60%);
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
 body {
   background-color: hsl(0 0 35);
   font-family: "Pixelify Sans";

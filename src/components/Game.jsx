@@ -1,3 +1,4 @@
+import "../styles/Game.css";
 import { useState } from "react";
 import Cards from "./Cards";
 import Scoreboard from "./Scoreboard";
@@ -8,7 +9,9 @@ export default function Game({ resetGame, highestScore, setHighestScore }) {
   return (
     <>
       <header>
-        <h1>Pokémon Memory Game</h1>
+        <h1>
+          <span>Pokémon</span> Memory Game
+        </h1>
       </header>
 
       <main>

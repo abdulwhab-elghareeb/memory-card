@@ -73,6 +73,10 @@ h6 {
   isolation: isolate;
 }
 
+:root {
+  --primary-color: hsl(47, 88%, 67%);
+}
+
 body {
   font-family: "Pixelify Sans";
 }

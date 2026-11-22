@@ -1,4 +1,4 @@
-import "../styles/Card.css"
+import "../styles/Card.css";
 import { useEffect, useState } from "react";
 
 export default function Card({
@@ -41,9 +41,11 @@ export default function Card({
   }
 
   return (
-    <button onClick={handleClick}>
-      <img src={imgUrl} />
-      {pokemonName}
-    </button>
+    <span>
+      <button className="pixel-corners" onClick={handleClick}>
+        <img src={imgUrl} />
+        {pokemonName}
+      </button>
+    </span>
   );
 }

@@ -1,0 +1,154 @@
+span:has(button) {
+  display: inline-block;
+  font-size: 2rem;
+}
+
+span:hover button {
+  transform: translateY(-10px);
+}
+
+button {
+  background-color: var(--primary-color);
+
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+
+  will-change: transform;
+  transition: transform 40ms;
+}
+
+img {
+  width: 100%;
+}
+
+/* from https://pixelcorners.lukeb.co.uk */
+.pixel-corners {
+  clip-path: polygon(
+    0px calc(100% - 32px),
+    8px calc(100% - 32px),
+    8px calc(100% - 24px),
+    16px calc(100% - 24px),
+    16px calc(100% - 16px),
+    24px calc(100% - 16px),
+    24px calc(100% - 8px),
+    32px calc(100% - 8px),
+    32px 100%,
+    calc(100% - 32px) 100%,
+    calc(100% - 32px) calc(100% - 8px),
+    calc(100% - 24px) calc(100% - 8px),
+    calc(100% - 24px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 24px),
+    calc(100% - 8px) calc(100% - 24px),
+    calc(100% - 8px) calc(100% - 32px),
+    100% calc(100% - 32px),
+    100% 32px,
+    calc(100% - 8px) 32px,
+    calc(100% - 8px) 24px,
+    calc(100% - 16px) 24px,
+    calc(100% - 16px) 16px,
+    calc(100% - 24px) 16px,
+    calc(100% - 24px) 8px,
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 0px,
+    32px 0px,
+    32px 8px,
+    24px 8px,
+    24px 16px,
+    16px 16px,
+    16px 24px,
+    8px 24px,
+    8px 32px,
+    0px 32px
+  );
+  position: relative;
+}
+.pixel-corners {
+  border: 18px solid transparent;
+}
+
+.pixel-corners::after {
+  content: "";
+  position: absolute;
+  clip-path: polygon(
+    0px calc(100% - 32px),
+    8px calc(100% - 32px),
+    8px calc(100% - 24px),
+    16px calc(100% - 24px),
+    16px calc(100% - 16px),
+    24px calc(100% - 16px),
+    24px calc(100% - 8px),
+    32px calc(100% - 8px),
+    32px 100%,
+    calc(100% - 32px) 100%,
+    calc(100% - 32px) calc(100% - 8px),
+    calc(100% - 24px) calc(100% - 8px),
+    calc(100% - 24px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 16px),
+    calc(100% - 16px) calc(100% - 24px),
+    calc(100% - 8px) calc(100% - 24px),
+    calc(100% - 8px) calc(100% - 32px),
+    100% calc(100% - 32px),
+    100% 32px,
+    calc(100% - 8px) 32px,
+    calc(100% - 8px) 24px,
+    calc(100% - 16px) 24px,
+    calc(100% - 16px) 16px,
+    calc(100% - 24px) 16px,
+    calc(100% - 24px) 8px,
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 0px,
+    32px 0px,
+    32px 8px,
+    24px 8px,
+    24px 16px,
+    16px 16px,
+    16px 24px,
+    8px 24px,
+    8px 32px,
+    0px 32px,
+    0px 50%,
+    8px 50%,
+    8px 32px,
+    16px 32px,
+    16px 24px,
+    24px 24px,
+    24px 16px,
+    32px 16px,
+    32px 8px,
+    calc(100% - 32px) 8px,
+    calc(100% - 32px) 16px,
+    calc(100% - 24px) 16px,
+    calc(100% - 24px) 24px,
+    calc(100% - 16px) 24px,
+    calc(100% - 16px) 32px,
+    calc(100% - 8px) 32px,
+    calc(100% - 8px) calc(100% - 32px),
+    calc(100% - 16px) calc(100% - 32px),
+    calc(100% - 16px) calc(100% - 24px),
+    calc(100% - 24px) calc(100% - 24px),
+    calc(100% - 24px) calc(100% - 16px),
+    calc(100% - 32px) calc(100% - 16px),
+    calc(100% - 32px) calc(100% - 8px),
+    32px calc(100% - 8px),
+    32px calc(100% - 16px),
+    24px calc(100% - 16px),
+    24px calc(100% - 24px),
+    16px calc(100% - 24px),
+    16px calc(100% - 32px),
+    8px calc(100% - 32px),
+    8px 50%,
+    0px 50%
+  );
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: hsl(1, 83%, 60%);
+  display: block;
+  pointer-events: none;
+}
+.pixel-corners::after {
+  margin: -8px;
+}

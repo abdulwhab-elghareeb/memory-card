@@ -1,0 +1,24 @@
+/* From Uiverse.io by Fernando-sv */
+
+.loader {
+  border-radius: 50%;
+  border: 10px dotted var(--secondary-color);
+  border-left-color: transparent;
+  border-right-color: transparent;
+
+  width: 200px;
+  height: 200px;
+  margin-inline: auto;
+
+  animation: spin 1s ease-in infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

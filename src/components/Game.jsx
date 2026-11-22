@@ -1,29 +1,23 @@
-import "../styles/Game.css";
-import { useState } from "react";
-import Cards from "./Cards";
 import Scoreboard from "./Scoreboard";
+import Cards from "./Cards";
+import { useState } from "react";
 
-export default function Game({ resetGame, highestScore, setHighestScore }) {
+export default function Game({ highestScore, setHighestScore, resetGame }) {
   const [currentScore, setCurrentScore] = useState(0);
 
-  return (
-    <div className="wrapper">
-      <header>
-        <h1>
-          <span>Pokémon</span> Memory Game
-        </h1>
-      </header>
+  function incrementScore() {
+    setCurrentScore(currentScore + 1);
+  }
 
-      <main>
-        <Scoreboard currentScore={currentScore} highestScore={highestScore} />
-        <Cards
-          currentScore={currentScore}
-          highestScore={highestScore}
-          setCurrentScore={setCurrentScore}
-          setHighestScore={setHighestScore}
-          resetGame={resetGame}
-        />
-      </main>
-    </div>
+  function handleGameEnd() {
+    if (currentScore > highestScore) setHighestScore(currentScore);
+    resetGame();
+  }
+
+  return (
+    <>
+      <Scoreboard currentScore={currentScore} highestScore={highestScore} />
+      <Cards incrementScore={incrementScore} handleGameEnd={handleGameEnd} />
+    </>
   );
 }

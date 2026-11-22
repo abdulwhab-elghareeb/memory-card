@@ -1,4 +1,6 @@
-export function shuffle(arr) {
+export default function shuffle(arr) {
+  if (!arr) return false;
+
   const visited = new Set();
   const shuffled = [];
 

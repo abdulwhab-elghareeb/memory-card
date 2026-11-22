@@ -1,16 +1,16 @@
 /* From Uiverse.io by Fernando-sv */
 
 .loader {
-  border-radius: 50%;
-  border: 10px dotted var(--secondary-color);
-  border-left-color: transparent;
-  border-right-color: transparent;
+  display: inline-block;
 
-  width: 200px;
-  height: 200px;
+  border-radius: 50%;
+  border: 20px dashed var(--primary-color);
+
+  width: 150px;
+  height: 150px;
   margin-inline: auto;
 
-  animation: spin 1s ease-in infinite;
+  animation: spin 2s infinite;
 }
 
 @keyframes spin {

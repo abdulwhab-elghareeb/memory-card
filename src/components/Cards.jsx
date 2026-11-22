@@ -1,40 +1,45 @@
 import "../styles/Cards.css";
 import { useState } from "react";
 import Card from "./Card";
-import { shuffle } from "../utils/shuffleArray";
+import pokemonNames from "../data/pokemonNames";
+import shuffle from "../utils/shuffleArray";
+import mapNamesToUrls from "../utils/mapNamesToUrls";
+import Loading from "./Loading";
 
-export default function Cards(props) {
-  const [pokemonNames, setPokemonNames] = useState(
-    shuffle([
-      "Pikachu",
-      "Charizard",
-      "Eevee",
-      "Bulbasaur",
-      "Squirtle",
-      "Meowth",
-      "Gengar",
-      "Mewtwo",
-      "Blaziken",
-      "Lucario",
-    ]),
-  );
+/* 
+I don't see any benefit from using "useEffect" here.
+Since there will only be 1 instance of this component, 
+and I only need to fetch data once because the data will 
+never change, it makes sense to fetch it at the top of the module 
+and use it whenever a new instance of this component gets created
+*/
+const pokemonMap = await mapNamesToUrls(pokemonNames);
 
-  function shuffleNames() {
-    setPokemonNames(shuffle(pokemonNames));
+export default function Cards({ incrementScore, handleGameEnd }) {
+  const [pokemonData, setPokemonData] = useState(shuffle(pokemonMap));
+
+  function handleValidClick() {
+    incrementScore();
+    setPokemonData(shuffle(pokemonData));
   }
 
   return (
-    <section className="cards">
-      {pokemonNames.map((pokemonName) => {
-        return (
-          <Card
-            key={pokemonName}
-            pokemonName={pokemonName}
-            shuffleNames={shuffleNames}
-            {...props}
-          />
-        );
-      })}
-    </section>
+    <main className="cards">
+      {pokemonData ? (
+        pokemonData.map((pokemon) => {
+          return (
+            <Card
+              key={pokemon.name}
+              pokemonUrl={pokemon.url}
+              pokemonName={pokemon.name}
+              handleValidClick={handleValidClick}
+              handleGameEnd={handleGameEnd}
+            />
+          );
+        })
+      ) : (
+        <Loading />
+      )}
+    </main>
   );
 }

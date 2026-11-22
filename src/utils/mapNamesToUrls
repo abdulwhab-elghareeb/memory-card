@@ -1,0 +1,16 @@
+export default async function mapNamesToUrls(pokemonNames) {
+  return Promise.all(
+    pokemonNames.map(async (pokemonName) => {
+      const url = `https://pokeapi.co/api/v2/pokemon-form/${pokemonName}/`;
+      const options = { method: "GET" };
+
+      try {
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return { name: pokemonName, url: data.sprites.front_default };
+      } catch (error) {
+        console.error(error);
+      }
+    }),
+  );
+}

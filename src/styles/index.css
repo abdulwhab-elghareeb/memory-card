@@ -75,6 +75,7 @@ h6 {
 
 :root {
   --primary-color: hsl(47, 88%, 67%);
+  --secondary-color: hsl(1, 83%, 60%);
 }
 
 body {
@@ -84,6 +85,6 @@ body {
 }
 
 .wrapper {
-  max-width: 1400px;
+  max-width: 1395px;
   margin-inline: auto;
 }
